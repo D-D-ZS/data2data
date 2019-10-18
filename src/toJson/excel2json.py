@@ -14,7 +14,7 @@ def excel2json(excel: str) -> list:
     """
     将excel表格第一行作为key，其他行作为对应values，返回解码后的json串
     :rtype: list
-    :param excel:
+    :param excel: excel文件路径
     :return: 返回处理好的json串列表
     """
     j_list = []
@@ -28,8 +28,3 @@ def excel2json(excel: str) -> list:
         json.dumps(line)
         j_list.append(line)
     return j_list
-
-
-if __name__ == '__main__':
-    excel1 = "C:\\work\\03_ingeek\项目\\3.0_CICS\真实数据\\02_平台侧\\1_工业互联网平台基础信息\\平台IP.xlsx"
-    excel2json(excel1)

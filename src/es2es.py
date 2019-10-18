@@ -23,7 +23,7 @@ def es2es_by_query(s_es: Elasticsearch, d_es: Elasticsearch, query_data, s_index
     print("actions_time: " + str(actions_time))
     # helpers.bulk(es2, actions)
     # 多线程同时写
-    for success, info in helpers.parallel_bulk(d_es, actions, thread_count=4, chunk_size=4000,
+    for success, info in helpers.parallel_bulk(d_es, actions, thread_count=4, chunk_size=400,
                                                max_chunk_bytes=100 * 1024 * 1024 * 2):
         if not success:
             print('Doc failed', info)
