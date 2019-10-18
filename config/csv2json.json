@@ -1,0 +1,30 @@
+{
+  "job": {
+    "content": [
+      {
+        "from": {
+          "name": "csv",
+          "parameter": {
+            "path": "",
+            "separator": ",",
+            "autodetect_column_names": true,
+            "skip_header": true,
+            "columns": ["app_id","cap_id","record_time","ip_dst","resp_count","rr_rate","duration","is_succ"],
+            "type": ["string", "string", "date", "string", "int", "float", "float", "bool"],
+            "date": {
+              "name": "record_time",
+              "format": "yyyy-MM-dd HH:mm:ss"
+            }
+          }
+        },
+        "to": {
+          "name": "json",
+          "parameter": {
+            "path": ""
+          }
+
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "job": {
+    "content": [
+      {
+        "from": {
+          "name": "es",
+          "parameter": {
+            "address": "192.168.1.211:9200,192.168.1.212:9200",
+            "query": {
+              "match_all": {}
+            },
+            "index": "dtlog-1-cics_in_sec_alert_log-6m-2019.07.02-000001",
+            "batchSize": 100,
+            "type": "logs",
+            "column": [
+              {
+                "name": "time",
+                "type": "text",
+                "key": "time"
+              },
+              {
+                "name": "ip",
+                "type": "text",
+                "key": "ip"
+              }
+            ]
+          }
+        },
+        "to": {
+          "name": "es",
+          "parameter": {
+            "name": "es",
+            "address": "192.168.1.211:9200,192.168.1.212:9200",
+            "query": {
+              "match_all": {}
+            },
+            "index": "dtlog-1-cics_in_sec_alert_log-6m-2019.07.02-000001",
+            "batchSize": 100,
+            "type": "logs",
+            "column": [
+              {
+                "name": "time",
+                "type": "text",
+                "key": "time"
+              },
+              {
+                "name": "ip",
+                "type": "text",
+                "key": "ip"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
